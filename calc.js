@@ -1,6 +1,10 @@
 const display = document.getElementById("display");
 let switchbtn = document.getElementById("switch");
 const body = document.querySelector("body")
+const btn = document.querySelectorAll("button")
+const colored = document.getElementsByClassName ("color")
+
+
 function hesabla() {
     display.value = eval(display.value)
 }
@@ -22,8 +26,17 @@ switchbtn.addEventListener("click", ()=>{
     if(switchbtn.checked == true){
         calculator.style.background = "rgb(36, 36, 36)"
         body.style.background = "#000"
+        // btn.forEach((element)=>{
+        //     element.style.background= "rgb(36, 36, 36)"
+        // })
+
+
     }else{
         calculator.style.background = "#fff"
         body.style.background = "#fff"
+        // btn.forEach((element)=>{
+        //     element.style.background= "#fff"
+        // })
+
     }
 })
