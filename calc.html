@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+
+#calculator {
+    display: table; padding: 30px; box-shadow: 0 0 10px #666; border-radius: 10px; margin: auto;
+}
+
+body {
+    display: flex; height: 100vh; margin: 0;
+}
+
+button{width: 50px; height: 40px; box-shadow: 2px 2px 0 #666; border: 1px solid #666; border-radius: 5px; margin: 5px;}
+button:active {box-shadow: 0 0 5px #666;}
+
+#display {
+    width: 247px;
+    height: 100px;
+    text-align: right;
+    background: rgb(230, 230, 230);
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 10px;
+}
+
+#eq { width: 115px; background: orange;}
+#eq:hover {background: rgb(0, 255, 166);}
+.color {
+    background: rgb(21, 123, 160);
+    color: rgb(98, 255, 0);
+    font-weight: 500;
+}
+
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div class="header">
+            <div class="switchBox">
+                <input type="checkbox" name="" id="switch" class="switch" value="switch">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div>
+            <input type="text" id="display">
+        </div>
+        <div>
+            <button class="color" onclick="clr()">C</button>
+            <button class="color" onclick="yaz('**')">^</button>
+            <button class="color" onclick="back()"><i class="fa-solid fa-delete-left"></i></button>
+            <button class="color" onclick="yaz('/')">÷</button>
+        </div>
+        <div>
+            <button onclick="yaz('7')">7</button>
+            <button onclick="yaz('8')">8</button>
+            <button onclick="yaz('9')">9</button>
+            <button class="color" onclick="yaz('*')">×</button>
+        </div>
+        <div>
+            <button onclick="yaz('4')">4</button>
+            <button onclick="yaz('5')">5</button>
+            <button onclick="yaz('6')">6</button>
+            <button class="color" onclick="yaz('-')">-</button>
+        </div> 
+        <div>
+            <button onclick="yaz('1')">1</button>
+            <button onclick="yaz('2')">2</button>
+            <button onclick="yaz('3')">3</button>
+            <button class="color" onclick="yaz('+')">+</button>
+        </div>
+        <div>
+            <button onclick="yaz('.')">.</button>
+            <button onclick="yaz('0')">0</button>
+            <button id="eq" onclick="hesabla()">=</button>
+        </div>
+    </div>  
+
+<script>
+    const display = document.getElementById("display");
+    let switchbtn = document.getElementById("switch");
+    const body = document.querySelector("body")
+    function hesabla() {
+        display.value = eval(display.value)
+    }
+    
+    function yaz(x) {
+        display.value += x
+    } 
+
+    function back() {
+    display.value = display.value.substring(0, display.value.length - 1);
+    }
+
+    function clr() {
+        display.value = ""
+    }
+
+
+    switchbtn.addEventListener("click", ()=>{
+        if(switchbtn.checked == true){
+            calculator.style.background = "rgb(36, 36, 36)"
+            body.style.background = "#000"
+        }else{
+            calculator.style.background = "#fff"
+            body.style.background = "#fff"
+        }
+    })
+
+</script>
+
+<script src="https://kit.fontawesome.com/d4a8753bf6.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
