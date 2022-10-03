@@ -19,7 +19,7 @@ button:active {box-shadow: 0 0 5px #666;}
     font-size: 40px !important;
 }
 
-#eq { width: 115px; background: orange;}
+#eq { width: 115px; background: orange; cursor: pointer;}
 #eq:hover {background: rgb(0, 255, 166);}
 .color {
     background: rgb(21, 123, 160);
