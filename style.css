@@ -8,6 +8,9 @@ body {
 
 button{width: 50px; height: 40px; box-shadow: 2px 2px 0 #666; border: 1px solid #666; border-radius: 5px; margin: 5px;}
 button:active {box-shadow: 0 0 5px #666;}
+button:hover {
+    cursor: pointer;
+}
 
 #display {
     width: 247px;
