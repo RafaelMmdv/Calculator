@@ -25,8 +25,8 @@ button:hover {
 #eq { width: 115px; background: orange; cursor: pointer;}
 #eq:hover {background: rgb(0, 255, 166);}
 .color {
-    background: rgb(21, 123, 160);
-    color: rgb(98, 255, 0);
+    background: rgb(21, 123, 160) !important;
+    color: rgb(98, 255, 0) !important;
     font-weight: 500;
 }
 
